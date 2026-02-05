@@ -103,7 +103,3 @@ final class tipos {
         }
     }
 }
-
-//      En general creo entender que son bastante laxos con la practica de esta unidad particularmente.
-//      Principalmente porque de ser estrictos, ellos tambien tendrian que saber como administrar 
-//6 distintos tipos de colecciones de las cuales todas tienen distintos metodos y distintas estructuras internas.
