@@ -4,7 +4,9 @@ import java.awt.event.*;
 
 public class unidad3 {
     public static void main(String[] args) {
-
+        app coso = new app();
+        coso.pack();
+        coso.setVisible(true);
     }
 }
 
@@ -81,7 +83,7 @@ class app extends Frame {
     private final Panel divCreator = new Panel();
     private final Panel list = new Panel();
     private final Button taskCreator = new Button("Agregar");
-    private final TextField fieldTask = new TextField();
+    private final TextField fieldTask = new TextField(20);
 
     public app() {
         super("titulo");
@@ -100,8 +102,8 @@ class app extends Frame {
             public void actionPerformed(ActionEvent e) {
                 String value = fieldTask.getText();
                 Panel row = new Panel();
-                Button deleter = new Button();
-                Button updater = new Button();
+                Button deleter = new Button("borrar");
+                Button updater = new Button("actualizar");
                 Label task = new Label();
 
                 task.setText(value);
@@ -110,18 +112,34 @@ class app extends Frame {
                 row.add(updater);
                 row.add(deleter);
                 list.add(row);
+                list.revalidate();
+                list.repaint();
 
                 deleter.addActionListener(new DeleteTask());
                 updater.addActionListener(new ActionListener() {
-                    //  Esta es una clase anonima.
                     @Override
                     public void actionPerformed(ActionEvent e) {
-
+                        String taskToUpdate = task.getText();
+                        DialogUpdater d = new DialogUpdater(app.this, "modal", taskToUpdate);
+                        d.setVisible(true);
+                        String newTask = d.getResult();
+                        if (newTask != null) {
+                            task.setText(newTask);
+                        }
                     }
                 });
             }
         }
         taskCreator.addActionListener(new CreateRow());
+
+        this.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                Frame window = (Frame) e.getSource();
+                window.dispose();
+                System.exit(0);
+            }
+        });
     }
 }
 
@@ -138,4 +156,44 @@ class DeleteTask implements ActionListener {
         list.revalidate();
         list.repaint();
     }
+}
+
+class DialogUpdater extends Dialog {
+    private final Button ok = new Button("OK");
+    private final Button cancel = new Button("cancelar");
+    private final Panel buttoner = new Panel();
+    private final TextField newTask = new TextField(20);
+    private String result = null;
+
+    public DialogUpdater(Frame window, String title, String task) {
+        super(window, title, true);
+        buttoner.setLayout(new FlowLayout());
+        buttoner.add(ok);
+        buttoner.add(cancel);
+        newTask.setText(task);
+        this.setLayout(new BorderLayout());
+        this.add(newTask, BorderLayout.CENTER);
+        this.add(buttoner, BorderLayout.SOUTH);
+
+        ok.addActionListener(e -> {
+            result = newTask.getText();
+            dispose();
+        });
+
+        cancel.addActionListener(e -> {
+            result = null;
+            dispose();
+        });
+
+        addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                result = null;
+                dispose();
+            }
+        });
+        pack();
+    }
+
+    public String getResult() { return result; }
 }
