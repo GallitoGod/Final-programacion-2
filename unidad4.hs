@@ -303,6 +303,8 @@ x ~= y = abs(x-y) < 0.0001
 -- Si es a la izquierda (infixl), va a hacer esto: a OP b OP c => (a OP b) OP c
 --  Tambien se podria poner en formato preorden: (~=) a b === a ~= b
 
+
+
 --  Tipos propios:
 
 --  Existen dos formas de definir un tipo:
