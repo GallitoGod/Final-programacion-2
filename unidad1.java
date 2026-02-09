@@ -173,3 +173,39 @@ class AvionACombustionInterna implements encendidoDeAvion {
 //      En donde la defincion del metodo entre ellos puede varaiar escandalozamente pero en general ambos tienen "que" 
 //hacer lo mismo y ellos deciden el "como".
 
+//  Por ultimo y aunque no este en la teoria, se que llegaron a preguntar sobre esto:
+//  Excepciones:
+
+//  Existen 3 formas:
+
+final class N {
+    private N(Boolean condicion) { // No se puede usar.
+        if (condicion) {
+            try {
+                // Secuencia que en caso de un funcionar pasa a catch()
+            } catch(Exception e) {
+                throw new RuntimeException("Se rompio algo en: ", e);
+            }   // El bloque try catch es eso, si algo sale mal en try, pasa como error a catch.
+        }
+        else {
+            throw new RuntimeException("Algo salio mal");
+        } // Este caso simplemente crea una excepcion ejecutable si accede al bloque de codigo por la condicion.
+    }
+
+    //  Tambien se puede decir cuando un metodo propaga el error:
+    public void metodoX(String x) throws RuntimeException { //  en metodos es throws no thorw.
+        System.out.println(x);
+    } //    Entonces el quien lo llama tiene una de dos:
+    //  O usa el bloque try catch o usa throw.
+}
+
+//  Tambien se puede crear errores propios:
+
+class ExcepcionEpica extends Exception {
+    public ExcepcionEpica(String mensaje) {
+        super(mensaje);
+    }
+}   // Entonces en los bloques try catch puedo utilizar esta excepcion.
+
+//  Algo importante: RunTimeException no necesita de bloques try catch para funcionar,
+//en cambio Exception necesariamente debe estar en un bloque try catch.
