@@ -152,4 +152,22 @@ final class MovimientosDePersona {
             }
         }// ListIterator es muy similar, tambien implementa hasPrevious() y previous() para poder ir de atras para delante.
     }
+
+    public void mapper() {
+        Map<String, Integer> map = new HashMap<>();
+        map.put("valor1", 1);
+        map.put("valor2", 2);
+        map.put("valor1", 1);
+        map.put("valor3", 3);
+        System.out.println(map);
+        System.out.println(map.get("valor1"));
+        System.out.println(map.containsKey("valor2"));
+        for (String key : map.keySet()) {
+            System.out.println(map.get(key));
+        }
+        map.remove("valor3");
+        for (Integer value : map.values()) {
+            System.out.println(value);
+        }
+    }
 }
