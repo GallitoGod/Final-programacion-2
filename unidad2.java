@@ -26,6 +26,9 @@ final class tipos {
 
         //      Deque<Boolean> cola = new ArrayDeque<>();
 
+        SortedSet<Integer> set = new TreeSet<>(); //<-- En donde esta coleccion ya tiene un orden predefinido por Comparable.compareTo() 
+        SortedSet<String> set1 = new TreeSet<>(Comparator.comparing(String::length));
+
         this.lista = lista;
         this.set = tSet;
         this.set1 = hSet;
@@ -101,5 +104,52 @@ final class tipos {
         for (Integer value : this.map.values()) {
             System.out.println(value);
         }
+    }
+}
+
+//  La interfaz Comparable se puede utilizar asi:
+class Persona implements Comparable<Persona> {
+    private String nombre;
+    public Persona (String nombre) {
+        this.nombre = nombre;
+    }
+
+    @Override
+    public int compareTo(Persona o) {
+        return this.nombre.compareTo(o.nombre);
+    }
+
+    @Override
+    public String toString() {
+        return this.nombre;
+    }
+
+}
+
+final class MovimientosDePersona {
+    private MovimientosDePersona() {};
+
+    public void ordenNatural() {
+        SortedSet<Persona> p = new TreeSet<>();
+        p.add(new Persona("Rodrigo"));
+        p.add(new Persona("Ana"));
+        for (Persona persona : p) {
+            System.out.println(persona);
+        }
+    }
+
+    public void usoDeIterator(Persona nadie) {
+        List<Persona> p = new ArrayList<>();
+        p.add(new Persona("Rodrigo"));
+        p.add(new Persona("Ana"));
+        p.add(new Persona("Jorge"));
+        p.add(new Persona("Lucia"));
+        Iterator<Persona> it = p.iterator();
+        while(it.hasNext()) {
+            System.out.println(it.next());
+            if (it.next() == nadie) {
+                it.remove();
+            }
+        }// ListIterator es muy similar, tambien implementa hasPrevious() y previous() para poder ir de atras para delante.
     }
 }
