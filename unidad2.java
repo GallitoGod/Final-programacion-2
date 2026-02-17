@@ -1,6 +1,28 @@
+/*
+    IMPORTANTE: 
+    Esta unidad me toco en el final.
+    Primero cabe aclarar que los pdfs de la catedra dan extrema importancia al JCF para esta unidad, cosa que no es 
+asi a la hora de evaluar. Basicamente no le tienen que dar tanta atencion a la administracion de colecciones 
+(ojo, lo mismo lo toman aunque no tanto) y centrarse mas en la aplicacion de los conceptos practicos de la unidad 1
+
+    Me pidieron explicar que es una clase abstracta y para que sirve. Despues pidieron que explique tambien que es
+y para que sirve una interfaz. Pasaron a preguntarme cosas como: 
+    
+    Toda clase posee un constructor ? (si, por compilador)
+    
+    Cuando se utilizan interfaces enves de clases abstractas ? (respuesta rapida: cuando se tiene que dar un comportamiento
+a priori identico con una distinta aplicacion; mismos metodos, distintas implementaciones)
+    
+    Cuantas clases abstractas se pueden heredar ? (solo se puede heredar una superclase, de la que sea, por subclase)
+    
+    Se puede y es recomendable hacer un costructor en clases abstractas ? (depende la situacion, algunas veces las clases
+abstractas directamente no tienen atributos permitibles para sus subclases. En caso de tener atributos heredables seria lo mas util
+para poder usarlo con la funcion super en el constructor de la subclase)
+
+    Y por ultimo, me pidieron dar la sintaxis de una clase extendiendose de otra e implementando varias interfaces.
+*/
+
 import java.util.*;
-
-
 
 public class unidad2 {
     public static void main(String [] args) {
@@ -28,6 +50,8 @@ final class tipos {
 
         SortedSet<Integer> set = new TreeSet<>(); //<-- En donde esta coleccion ya tiene un orden predefinido por Comparable.compareTo() 
         SortedSet<String> set1 = new TreeSet<>(Comparator.comparing(String::length));
+        System.out.println(set);
+        System.out.println(set1);
 
         this.lista = lista;
         this.set = tSet;

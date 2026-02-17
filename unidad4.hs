@@ -1,6 +1,37 @@
 --  Parte practica de Haskell Unidad 4:
 
 {-
+    IMPORTANTE: 
+    Me toco esta unidad en el final.
+    Primero me preguntaron por las funciones de orden superior, que son y el porque,
+y que explique una. Explique 'map' y me pidieron la declaracion de map como funcion:
+    map :: (a -> b) -> [a] -> [b]
+
+    Despues me pidieron hacer una funcion recursiva que utilice alguna sintaxis de lista, 
+para lo que hice esto:
+    length' :: [a] -> Int
+    length' [] = 0
+    length' (_:xs) = 1 + length'
+
+    De esta funcion me pidieron explicar el patern matching, y la currificcion.
+
+    Por ultimo, en esta unidad, me pidieron que explique la evaluacion perezosa, 
+lo que hice con estos ejemplos:
+    constante :: a -> b -> a
+    constante x _ = x
+
+    Donde en el ghci: >>> constante 5 (error "Explota"), no explota porque al nisiquiera
+ser utilizado para la definicion de la funcion nunca opera con el argumento b.
+
+    natural :: [Int]
+    natural = [1..]
+
+    Donde en ghci: >>> take 5 natural, solo devuelve los 5 primeros valores de la lista infinita,
+cosa que no sucede en la evaluacion ansiosa.
+-}
+
+
+{-
     A mi entender, la practica, de esta unidad, para el final se centra en:
     
         1_ Los tipos basicos y la declaracion de funciones.

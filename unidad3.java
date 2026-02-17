@@ -16,6 +16,7 @@ public class unidad3 {
         1_Contenedores basicos (objetos Containers):
             1_Frame = ventana principal (Con este solo usar WindowListener o WindowAdapter).
             2_Panel = una especie de div.
+            3_Dialogo = es un modal de js pero ya tiene la implementacion.
 
         2_Controles basicos (objetos Components):
             1_Button (ActionListener y MouseAdapter (mejor ActionListener que es generico y solo usa 

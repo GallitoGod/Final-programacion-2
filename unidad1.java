@@ -1,9 +1,7 @@
-//Estos documentos no siguen el orden de explicacion de los documentos teoricos.
-
-
+//  LEAN EL READMEEEEEEEEEE
 public class unidad1 {
     // Esta es la clase principal del archivo. Simplemente porque tiene el mismo nombre.
-    // Etntonces puedo hacer esto --->
+    // Entonces puedo hacer esto --->
     public static void main(String []args) {
         System.out.println("Hola, esto si anda");
 
@@ -24,9 +22,9 @@ final class otraOtraClase { } // Esta clase no es heredable y si su constructor 
 abstract class claseAbstracta { } // Esta no se puede instanciar no se puede instanciar
 
 abstract class Figura {
-    //      Voy a explicar el concepto de abstraccion con esta clase, ojo que no necesariamente abstraccion en OO significa clases abstractas.
+    //      Voy a explicar el concepto de abstraccion con esta clase, ojo que abstraccion en OO significa clases abstractas.
     //      Mas bien hace referencia a la capacidad de crear una clase que pueda representar un concepto general para poder intanciar objectos 
-    //variados pero que comportan cualidades y comportamientos similares. Podria haber hehco la clase figura normal, pero de paso explico 
+    //variados pero que comportan cualidades y comportamientos similares. Podria haber hecho la clase figura normal, pero de paso explico 
     //clases abstractas:
     private String color; // que sea private significa que solo el, a traves de sus metodos, puede acceder a su valor.
     protected Double area; // En protected, todas las subclases ven el atributo.
@@ -56,19 +54,20 @@ class Circulo extends Figura {
     }   
 } //    En esto tambien se ve la encapsulacion y ocultamiento, principalmente a traves de los modificadores de acceso de clases, metodos y atributos.
 
-//      El concepto de modularidad hace foco en al capacidad de modularizar las partes necesarias de un sistema para llevar a cabo la resolucion de un problema
-//no es tan visible en programas como estos, donde su fin es practicar conceptos y marcar de donde vienen de la teoria, pero:
+//      El concepto de modularidad hace foco en al capacidad de modularizar las partes necesarias de un sistema para llevar a cabo la resolucion de un problema,
+//a traves de una alta cohesion (un modulo unicamente enfocado a un proceso u objeto) y un baso acoplamiento (dpendencias internas entre modulos disntintos).
+//      No es tan visible en programas como estos, donde su fin es practicar conceptos y marcar de donde vienen de la teoria, pero:
 //      Hagamos de cuenta que se tiene un sistema de cajero de comida rapida, la capacidad de modularidad viene dada de el hecho de poder separar dependencias claves.
 //      Si tenemos (idealmente claro) un paquete que adminstra el pago, otro que manda el pedido a cocina y otro que ordena las salidas de los pedidos, podriamos decir
 //que, a priori que el sistema esta bien modularizado. Tambien se puede ver el nivel de acoplamiento entre ellos que se explica como la dependencia entre uno y otro para
-//completar su fuoncion.
+//completar su funcion.
 
 
 // -----------------------------------------------------------------------------------
 
 //      Creo que en el simple hecho de mostrar los elementos que componen el paradigma OO queda implicitamente explicado lo que significa
 //un metodo y un atributo, que es una clase y porque su instancia es un objeto unico y como estos documentos son mas practicos que teoricos
-//voy a saltar conceptos teoricos que no tiene sentido explicar nuevamente en la practica.
+//voy a saltar conceptos teoricos que no tiene sentido explicar.
 
 //      La sobrecarga si es un concepto que me interesa practicar fuertemente. Hagamos de cuenta que en algun sistema se necesita caluclar
 //areas de distintoas figuras geometricas utilizando una clase de la forma:
@@ -76,21 +75,21 @@ class Circulo extends Figura {
 final class CalculoDeAreas {
     private CalculoDeAreas() {}
 
-    static Double area(Double radio) {//    Donde la sobrecarga de metodos se da a traves de la cantidad y tipo de parametros que toma el metodo.
+    static Double area(Double radio) {// Donde la sobrecarga de metodos se da a traves de la cantidad y tipo de parametros que toma el metodo.
         return Math.PI * (radio*radio);
     }
 
-    static Double area(Double base, Double altura) {//      Esto es polimorfismo en tiempo de compilador.
+    static Double area(Double base, Double altura) {// Esto es polimorfismo en tiempo de compilador.
         return base*altura;
     }
-}//     Aparte, en esta clase se puede ver metodos "static", los cuales pertenecen a la clase y no a un objeto,
+}// Aparte, en esta clase se puede ver metodos "static", los cuales pertenecen a la clase y no a un objeto,
  //por lo que se pueden ejecutar sin existir un objeto de esa clase. Pasa lo mismo con los atributos, tienen un unico espacio de memoria.
 
 
 
 
 
-//      Ya hice referencia al polimorfismo en tiempo de compilacion y ejecucion, asi que voy a dar un ejemplo util para el final de estos dos:
+// Ya hice referencia al polimorfismo en tiempo de compilacion y ejecucion, asi que voy a dar un ejemplo util para el final de estos dos:
 
 class A {
     public A() {}//     No es necesario hacer un constructor vacio porque como tal eso siempre existe hasta definirse uno con parametros.
@@ -127,7 +126,7 @@ final class Ejecutor {
         idea.print(y);
     }
 }
-//      Aca se pueden ver muchisimas cosas interesantes, entre ellas la difrencia de dos tipos de polimrofismo.
+//      Aca se pueden ver muchisimas cosas interesantes, entre ellas la difrencia de dos tipos de polimorfismo.
 //      Que se ejecutaria de aca? los metodos de A, siendo la referencia, o los metodos reescritos de B siendo el espacio de memoria almacenado ?
 //      La respuesta es simple: se ejecutarian las reescrituras de B y sus sobrecargas, pero, tambien se ve que la referencia de un objeto y
 //las sobrecargas son polimorfismo de compilacion, mientras que las reescrituras polimorfismo de compilacion, porque en compilacion 
