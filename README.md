@@ -3,7 +3,7 @@
 > [!TIP]
 > Te sirvio? Tirame una estrellita ⭐ en este repo. Y ya que estas tambien en este: [UNCa-Interfaz](https://github.com/GallitoGod/UNCa-Interfaz)
 
-Este repo lo arme para ayudar a companeros a preparar Programacion 2 lo mas rapido posible. No es una biblia: es practica hecha con lo que habia, porque el contenido de la catedra a veces parece armado con cinta scotch y fe. En los scripts hay de todo (incluyendo tonteras), pero la idea es que te sirva para agarrar ritmo y llegar al parcial/final sin morir.
+Este repositorio lo arme para preparar Programacion 2 lo mas rapido posible. No es una biblia: es practica hecha con lo que habia, porque el contenido de la catedra a veces parece armado con cinta scotch y fe. En los scripts hay de todo (incluyendo tonteras), pero la idea es que te sirva para agarrar ritmo y llegar al parcial/final sin morir.
 
 ---
 
