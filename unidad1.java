@@ -1,4 +1,19 @@
 //  LEAN EL READMEEEEEEEEEE
+
+/*
+    De esta unidad tan solo me hicieron una pregunta ya al final de responder todo sobre la otra unidad.
+
+    Que es el encapsulamiento y el ocultamiento?
+
+    El ocultamiento lo que busca es tener una interfaz con la que interactuen las clases externas a nuestra clase, osea que puedan
+    utilizarla sin saber como se implementa por dentro.
+    El encapsulamiento es una herramienta del ocultamiento y nos brinda funciones como los modificadores de acceso
+    public, protected y private.
+
+*/
+
+
+
 public class unidad1 {
     // Esta es la clase principal del archivo. Simplemente porque tiene el mismo nombre.
     // Entonces puedo hacer esto --->
