@@ -22,6 +22,26 @@ para poder usarlo con la funcion super en el constructor de la subclase)
     Y por ultimo, me pidieron dar la sintaxis de una clase extendiendose de otra e implementando varias interfaces.
 */
 
+/*
+    Otras preguntas:
+    
+    Segun mi experiencia en los finales de programación las respuestas que buscan los profes es que sean concretas a las preguntas
+    que realizaron, no irse más de lo que te piden.
+    Mis respuestas fueron mas bien explicadas a mis palabras a que una definición tal como lo da la catedra en los pdfs.
+    
+    Que es la sobrecarga de metodos? Existe la sobrecarga de constructores? Que pasa si tengo 2 contructores con exactamente iguales?
+
+    La sobracarga de metodos es cuando tenemos 2 o mas metodos con el mismo nombre, esto esta permitido ya que el compilador diferencia
+    un metodo sobre otro por los argumentos (parametros).
+
+    Si, la sobrecarga de constructores existe y es posible, generalmente tenemos el constructor
+    vacio y el otro constructor con los atributos de la clase, como dije anteriormente, el compilador
+    los diferencia por los argumentos que le pasemos a la hora de instanciar.
+
+    Por ultimo, si tenemos 2 contructores iguales habra error.
+    
+*/
+
 import java.util.*;
 
 public class unidad2 {
