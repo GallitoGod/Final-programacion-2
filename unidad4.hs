@@ -73,7 +73,7 @@
 
 -- DECLARACION DE FUNCIONES(Firma y Definicion)
 doble:: Int -> Int -- 'firma': recibe un Int, devuelve un Int (Aca se declara la funcion
-doble x = 2*x   -- definicion: que hace con esa 'x'
+doble x = 2*x   -- definicion: que hace con esa 'x')
 
 
 -- las constantes son simplemente funciones sin argumentos:
@@ -197,7 +197,7 @@ swapp (x,y) = (y,x)
 {-
     List Comprehension (Listas por comprension, similar a notacion de conjuntos en matematica)
     [(x,y) | x <- [1..5], y <- [1,2]] -- => [(1,1), (1,2), (2,1), (2,2), (3,1), ..., (5,2)]
-    [x+2 | x <- [1,4..6]] -- => [3,6,7,8]
+    [x+2 | x <- [1..4] -- => [3,4,5,6]
     [x | x <- [1,2,3,4], even x] -- => [2,4]
     --  En general todo se da con razon a la primera sentencia
 
@@ -225,6 +225,10 @@ swapp (x,y) = (y,x)
         -filter even [1..5] => [2,4]
      
 -}
+
+-- FUNCIONES LAMBDA (Funciones anonimas):
+-- Se usa la barra invertida '\' para representar la letra griega lambda.
+-- Ejemplo con map: map (\x -> x * 2) [1..5] => [2,4,6,8,10]
 
 
 -- ===========================================================================================
