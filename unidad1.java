@@ -33,20 +33,23 @@
         R: Si, es muy recomendable si la clase abstracta tiene atributos propios. Asi, las subclases pueden inicializarlos pasandole los datos mediante la funcion super().
 
   
-    6. ¿Que es la sobrecarga de metodos?¿y de constructores?
-        R: Es cuando tenemos 2 o mas metodos(o constructores) con el mismo nombre. El compilador los diferencia por la cantidad y tipo de parametros. Es un ejemplo de polimorfismo estatico
+    6. ¿Que es la sobrecarga de metodos?¿y de constructores?¿que pasa si tengo 2 contructores con parametros exactamente iguales?
+        R: Es cuando tenemos 2 o mas metodos(o constructores) con el mismo nombre. El compilador los diferencia por la cantidad y tipo de parametros,si tenemos 2 contructores iguales habra error. Es un ejemplo de polimorfismo estatico
+
 
     7. ¿Cuales son las tres formas de trabajar con Excepciones en java?
         R:- try-catch: Captura el error en el momento y ejecuta una solucion o mensaje alternativo.
            - throw: Lanza una excepcion de forma intencional y manual (sirve para abortar un proceso si algo no cumple las reglas).
            - throws (con 's'): Se coloca en la firma de un metodo para indicar que propaga el error; es decir, "patea" el problema para que lo resuelva quien llamo al metodo.
     
+
     8. ¿Que diferencia hay entre Exception y RuntimeException?
         R:- Exception (Excepciones Comprobadas): El compilador de Java te OBLIGA a capturarlas con un try-catch o a propagarlas. No te deja compilar si las ignorás.
            - RuntimeException (Excepciones No Comprobadas): Ocurren en tiempo de ejecución. El compilador asume que tu lógica debería evitarlas, por lo que NO te obliga a usar try-catch.
         
         
-    "De esta unidad tan solo me hicieron una pregunta la 1 ya al final de responder todo sobre la otra unidad."
+    #Comentarios extra de personas que la rindieron:
+    - "De esta unidad tan solo me hicieron una pregunta la 1 ya al final de responder todo sobre la otra unidad."
 */
 
 
@@ -307,5 +310,5 @@ class ExcepcionEpica extends Exception {
     - Exception (y clases como ExcepcionEpica que hereden de ella) NECESARIAMENTE 
       deben estar dentro de un bloque try-catch o propagarse con 'throws', 
       sino Java te tirará error de compilación.
-      
+
 */
